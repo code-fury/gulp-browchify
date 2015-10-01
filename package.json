@@ -1,7 +1,7 @@
 {
   "name": "gulp-browchify",
-  "version": "0.0.1",
-  "description": "Anintegration of browserify and watchify",
+  "version": "1.0.0",
+  "description": "An integration of gulp, browserify and watchify",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
