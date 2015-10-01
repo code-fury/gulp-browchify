@@ -1,6 +1,6 @@
 {
   "name": "gulp-browchify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An integration of gulp, browserify and watchify",
   "main": "index.js",
   "scripts": {
