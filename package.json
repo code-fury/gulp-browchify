@@ -1,0 +1,33 @@
+{
+  "name": "gulp-browchify",
+  "version": "0.0.1",
+  "description": "Anintegration of browserify and watchify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-fury/gulp-browchify.git"
+  },
+  "keywords": [
+    "gulp",
+    "browserify",
+    "watchify"
+  ],
+  "author": "code-fury",
+  "license": "Apache2 License 2.0",
+  "bugs": {
+    "url": "https://github.com/code-fury/gulp-browchify/issues"
+  },
+  "homepage": "https://github.com/code-fury/gulp-browchify",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-watch": "^4.3.5",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  }
+}
