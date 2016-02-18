@@ -51,11 +51,17 @@ module.exports = {
         return gulp.src(opts.entries)
             .pipe(watch(opts.entries, function (vinyl) {
                 if (vinyl.event == "added" || vinyl.event == undefined) {
-                    return browchify({
+                    var w = browchify({
                         entry: vinyl,
                         outDir: opts.outDir,
                         transform: opts.transform
                     })
+                    w.on('end', function () {
+                        if (opts.end) {
+                            opts.end()
+                        }
+                    })
+                    return w
                 } else {
                     console.log(vinyl.relative + " " + vinyl.event)
                 }

@@ -9,7 +9,11 @@ gulp.task("watch_multiple_js", function () {
     return browchify.watch({
         entries: "./js/*.js",
         outDir: "./build/",
-        transform: reactify
+        transform: reactify,
+        debug: true,
+        end: function () {
+            console.log('stream-end')
+        }
     })
 })
 
@@ -17,6 +21,10 @@ gulp.task("watch_single_js", function () {
     return browchify.watch({
         entries: "./js/dummy.js",
         outDir: "./build/single/",
-        transform: [reactify]
+        transform: [reactify],
+        debug: true,
+        end: function () {
+            console.log('stream-end')
+        }
     })
 })

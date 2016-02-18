@@ -27,5 +27,9 @@
     "gulp-watch": "^4.3.5",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0"
+  },
+  "devDependencies": {
+    "react": "^0.14.7",
+    "reactify": "^1.1.1"
   }
 }

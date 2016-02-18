@@ -42,3 +42,7 @@ List of all transform for browserify
 ### opts.debug
 #### Type: boolean
 Determine whether debug messages should be printed to console or not. Default value is true.
+
+### opts.end
+#### Type: function
+This function does not receive any parameters and will be called when a stream ends.
