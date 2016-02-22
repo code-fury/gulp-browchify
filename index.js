@@ -6,7 +6,8 @@ var watchify = require("watchify")
 var source = require('vinyl-source-stream')
 var gulp = require("gulp")
 var watch = require("gulp-watch")
-
+var chalk = require("chalk")
+var plumber = require("gulp-plumber")
 /**
  *
  * @param opts entry is a vinyl
@@ -35,7 +36,7 @@ function browchify (opts) {
 
     function rebundle() {
         return watcher.bundle().on('error', function (err) {
-            console.error(err.toString('utf8'))
+            console.error(chalk.red(err.toString('utf8')))
         }).pipe(source(opts.entry.relative))
             .pipe(gulp.dest(opts.outDir))
     }
