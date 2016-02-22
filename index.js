@@ -37,6 +37,10 @@ function browchify (opts) {
     function rebundle() {
         return watcher.bundle().on('error', function (err) {
             console.error(chalk.red(err.toString('utf8')))
+        }).on('end', function () {
+            if (opts.end) {
+                opts.end()
+            }
         }).pipe(source(opts.entry.relative))
             .pipe(gulp.dest(opts.outDir))
     }
@@ -57,12 +61,15 @@ module.exports = {
                     var w = browchify({
                         entry: vinyl,
                         outDir: opts.outDir,
-                        transform: opts.transform
+                        transform: opts.transform,
+                        end: opts.end
                     })
                     w.on('end', function () {
                         if (opts.end) {
                             opts.end()
                         }
+                    }).on('error', function (err) {
+                        console.error(chalk.red(err.toString('utf8')))
                     })
                     return w
                 } else {
