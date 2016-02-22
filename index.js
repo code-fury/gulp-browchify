@@ -34,15 +34,17 @@ function browchify (opts) {
     var watcher = watchify(bundler)
 
     function rebundle() {
-        return watcher.bundle()
-            .pipe(source(opts.entry.relative))
+        return watcher.bundle().on('error', function (err) {
+            console.error(err.toString('utf8'))
+        }).pipe(source(opts.entry.relative))
             .pipe(gulp.dest(opts.outDir))
     }
 
     watcher.on('update', function (ids) {
         console.log("updating " + ids)
-        rebundle()
+        return rebundle()
     })
+
     return rebundle()
 }
 

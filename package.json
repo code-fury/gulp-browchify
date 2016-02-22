@@ -1,6 +1,6 @@
 {
   "name": "gulp-browchify",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "An integration of gulp, browserify and watchify",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,10 @@
   "homepage": "https://github.com/code-fury/gulp-browchify",
   "dependencies": {
     "browserify": "^11.2.0",
+    "domain": "0.0.1",
     "gulp": "^3.9.0",
     "gulp-watch": "^4.3.5",
+    "plumber": "^0.4.8",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0"
   },

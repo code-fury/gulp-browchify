@@ -5,7 +5,6 @@ var React = require("react")
 var Dummy = require("./dummy")
 
 module.exports = React.createClass({
-
     render: function () {
         return <div>Hello, {this.props.name}!</div>
     }
