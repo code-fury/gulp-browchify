@@ -37,6 +37,9 @@ function browchify (opts) {
     function rebundle() {
         return watcher.bundle().on('error', function (err) {
             console.error(chalk.red(err.toString('utf8')))
+            if (opts.error) {
+                opts.error(err.toString("utf8"))
+            }
         }).on('end', function () {
             if (opts.end) {
                 opts.end()
@@ -62,13 +65,17 @@ module.exports = {
                         entry: vinyl,
                         outDir: opts.outDir,
                         transform: opts.transform,
-                        end: opts.end
+                        end: opts.end,
+                        error: opts.error
                     })
                     w.on('end', function () {
                         if (opts.end) {
                             opts.end()
                         }
                     }).on('error', function (err) {
+                        if (opts.error) {
+                            opts.error(err.toString("urf8"))
+                        }
                         console.error(chalk.red(err.toString('utf8')))
                     })
                     return w
